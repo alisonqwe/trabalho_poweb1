@@ -1,0 +1,50 @@
+body {
+   background: linear-gradient(180deg, #6856aa, #e5e1f0);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  padding: 50px 20px;
+}
+
+.cabecalho h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.cabecalho p {
+  font-size: 1.2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-midia {
+  height: 100%;
+}
+
+.badge-status {
+  font-size: 0.9rem;
+}
+
+.btn-excluir {
+  width: 100%;
+}
+
+main {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+section.card {
+  background: linear-gradient(180deg, #6856aa, #e5e1f0);
+  border: none;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(12, 12, 12, 0.12);
+}
