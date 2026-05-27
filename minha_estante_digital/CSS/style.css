@@ -1,3 +1,5 @@
+
+/* estilo geral na página inteira. */
 body {
    background: linear-gradient(180deg, #6856aa, #e5e1f0);
   font-family: Arial, Helvetica, sans-serif;
@@ -27,7 +29,7 @@ body {
 .card-midia {
   height: 100%;
 }
-
+/* ajusta o tamanho do badge de status. O badge é aquela etiqueta visual que mostra se a mídia está como “Quero ver”, “Assistindo” ou “Já assisti”. */
 .badge-status {
   font-size: 0.9rem;
 }
@@ -40,7 +42,7 @@ main {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
+/* Aqui eu estilizo as seções principais da página, como o formulário e os filtros. Elas também usam a classe card, mas recebem um fundo em degradê, bordas arredondadas e sombra. */
 section.card {
   background: linear-gradient(180deg, #6856aa, #e5e1f0);
   border: none;

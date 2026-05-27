@@ -188,3 +188,71 @@ Isso permite que os filmes e séries adicionados continuem salvos mesmo após at
 Este projeto utiliza HTML, CSS e JavaScript para criar uma aplicação web interativa.
 
 Além disso, faz uso do Bootstrap para melhorar a interface, da API TMDB para buscar dados de filmes e séries, e do LocalStorage para salvar as informações cadastradas pelo usuário no navegador.
+
+
+
+explicação do js :
+main.js → inicia o sistema e conecta os outros arquivos
+apiTMDB.js → busca dados na API do TMDB
+storage.js → salva e carrega dados no LocalStorage
+catalogo.js → cria, edita e exclui mídias
+filtros.js → filtra as mídias cadastradas
+estatisticas.js → atualiza os contadores da tela
+interface.js → renderiza sugestões e cards na tela
+
+
+Para deixar o HTML mais organizado, separamos a interface em pequenos componentes HTML. O index.html ficou responsável apenas por definir as áreas principais da página. Depois, o arquivo carregarComponentes.js usa fetch() para carregar cada parte da interface, como cabeçalho, formulário, filtros, estatísticas e catálogo.
+
+Depois que esses componentes são carregados, o main.js é importado para iniciar a lógica da aplicação. Isso evita erro, porque o JavaScript principal só roda depois que todos os elementos HTML já existem na tela.
+
+
+index.html → define onde os componentes entram
+header.html → cabeçalho
+formulario.html → formulário de cadastro
+filtros.html → filtros da aplicação
+estatisticas.html → cards de estatísticas
+catalogo.html → área onde aparecem os cards
+carregarComponentes.js → carrega os componentes com fetch()
+main.js → inicia a lógica da aplicação
+
+
+Essa separação deixa o projeto mais organizado, porque cada parte da interface fica em um arquivo específico. Assim, se eu quiser alterar o formulário, mexo apenas em formulario.html; se quiser alterar os filtros, mexo apenas em filtros.html; e se quiser alterar o cabeçalho, mexo apenas em header.html.
+
+
+A estrutura do projeto foi separada por responsabilidade. O index.html é a página principal, mas ele não guarda todo o HTML diretamente. As partes visuais foram separadas na pasta components, como cabeçalho, formulário, filtros, estatísticas e catálogo.
+
+A pasta CSS guarda o estilo personalizado. A pasta JS guarda a lógica da aplicação, também separada por responsabilidade. O main.js inicia o sistema, o apiTMDB.js cuida da API, o storage.js cuida do LocalStorage, o interface.js monta os cards, o filtros.js aplica os filtros e o estatisticas.js atualiza os contadores.
+-------------------------------------------------------
+explicação do bootstrap
+O Bootstrap fica dentro da pasta dependencias, então o projeto usa o framework localmente.
+
+Bootstrap é um framework CSS, ou seja, uma biblioteca pronta que já vem com várias classes para deixar a página mais organizada e bonita sem você precisar escrever tudo no CSS manualmente.
+
+<main class="container my-4">
+
+A classe:
+
+container
+
+vem do Bootstrap.
+
+Ela serve para centralizar o conteúdo e não deixar tudo grudado nas bordas da tela.
+
+2. O Bootstrap divide a tela em colunas
+
+Essa é a parte mais importante.
+
+No formulário, você usa:
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+  <div class="col-md-3 mb-3">
+  <div class="col-md-3 mb-3">
+</div>
+
+
+O Bootstrap foi usado como framework CSS para facilitar a construção da interface. Ele fornece classes prontas para layout, formulários, botões, cards e espaçamentos.
+
+No projeto, usamos o sistema de grid do Bootstrap, que divide a tela em 12 colunas. Por exemplo, no formulário usamos col-md-6, col-md-3 e col-md-3, somando 12 colunas. Isso organiza os campos na mesma linha.
+
+Também usamos classes como container, row, card, btn, form-control e form-select. Assim, o Bootstrap cuida da base visual e da organização, enquanto o nosso CSS próprio personaliza cores, sombras e bordas.

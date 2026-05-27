@@ -1,0 +1,52 @@
+<section class="card p-4 mb-4">
+  <h2 class="mb-3">Cadastrar mídia</h2>
+
+  <form id="formMidia">
+
+    <div class="row">
+
+      <!-- Campo do título -->
+      <div class="col-md-6 mb-3">
+        <label for="titulo" class="form-label">Título</label>
+
+        <input 
+          type="text" 
+          id="titulo" 
+          class="form-control" 
+          placeholder="Ex: Breaking Bad"
+          autocomplete="off"
+        >
+
+        <!-- Sugestões vindas da API -->
+        <div id="sugestoesFilmes" class="list-group mt-2"></div>
+      </div>
+
+      <!-- Campo do tipo -->
+      <div class="col-md-3 mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+
+        <select id="tipo" class="form-select">
+          <option value="Filme">Filme</option>
+          <option value="Série">Série</option>
+        </select>
+      </div>
+
+      <!-- Campo do status -->
+      <div class="col-md-3 mb-3">
+        <label for="status" class="form-label">Status</label>
+
+        <select id="status" class="form-select">
+          <option value="Quero ver">Quero ver</option>
+          <option value="Assistindo">Assistindo</option>
+          <option value="Já assisti">Já assisti</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Adicionar
+    </button>
+
+  </form>
+</section>

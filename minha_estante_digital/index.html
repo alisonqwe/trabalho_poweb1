@@ -3,125 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Minha Estante Digital</title>
 
   <!-- Bootstrap -->
   <link href="dependencias/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- CSS próprio -->
- <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
 
-  <header class="cabecalho text-center">
-    <h1>Minha Estante Digital</h1>
-    <p>Organize seus filmes e séries favoritos em um só lugar.</p>
-  </header>
+  <!-- O cabeçalho será carregado aqui -->
+  <div id="areaHeader"></div>
 
+  <!-- Conteúdo principal -->
   <main class="container my-4">
-    <section class="card p-4 mb-4">
-  <h2 class="mb-3">Cadastrar mídia</h2>
 
-  <form id="formMidia">
-    <div class="row">
-   <div class="col-md-6 mb-3">
-  <label for="titulo" class="form-label">Título</label>
+    <!-- O formulário será carregado aqui -->
+    <div id="areaFormulario"></div>
 
-  <input 
-    type="text" 
-    id="titulo" 
-    class="form-control" 
-    placeholder="Ex: Breaking Bad"
-    autocomplete="off"
-  >
+    <!-- Os filtros serão carregados aqui -->
+    <div id="areaFiltros"></div>
 
-  <div id="sugestoesFilmes" class="list-group mt-2"></div>
-</div>
+    <!-- As estatísticas serão carregadas aqui -->
+    <div id="areaEstatisticas"></div>
 
-      <div class="col-md-3 mb-3">
-        <label for="tipo" class="form-label">Tipo</label>
-        <select id="tipo" class="form-select">
-          <option value="Filme">Filme</option>
-          <option value="Série">Série</option>
-        </select>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <label for="status" class="form-label">Status</label>
-        <select id="status" class="form-select">
-          <option value="Quero ver">Quero ver</option>
-          <option value="Assistindo">Assistindo</option>
-          <option value="Já assisti">Já assisti</option>
-        </select>
-      </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Adicionar</button>
-  </form>
-</section>
-<section class="card p-4 mb-4">
-  <h2 class="mb-3">Filtros</h2>
-
-  <div class="row">
-    <div class="col-md-4 mb-3">
-      <input type="text" id="filtroTitulo" class="form-control" placeholder="Buscar por título">
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <select id="filtroTipo" class="form-select">
-        <option value="">Todos os tipos</option>
-        <option value="Filme">Filme</option>
-        <option value="Série">Série</option>
-      </select>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <select id="filtroStatus" class="form-select">
-        <option value="">Todos os status</option>
-        <option value="Quero ver">Quero ver</option>
-        <option value="Assistindo">Assistindo</option>
-        <option value="Já assisti">Já assisti</option>
-      </select>
-    </div>
-  </div>
-</section>
-
-<section class="row text-center mb-4">
-  <div class="col-md-3 mb-3">
-    <div class="card p-3">
-      <h3 id="totalMidias">0</h3>
-      <p>Total</p>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="card p-3">
-      <h3 id="totalFilmes">0</h3>
-      <p>Filmes</p>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="card p-3">
-      <h3 id="totalSeries">0</h3>
-      <p>Séries</p>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="card p-3">
-      <h3 id="totalAssistidos">0</h3>
-      <p>Já assistidos</p>
-    </div>
-  </div>
-</section>
-<section>
-  <h2 class="mb-3">Meu catálogo</h2>
-  <div id="listaMidias" class="row"></div>
-</section>
+    <!-- O catálogo será carregado aqui -->
+    <div id="areaCatalogo"></div>
 
   </main>
 
-  <!-- link do js -->
-  <script src="JS/script.js"></script>
+  <!-- Primeiro carrega os componentes HTML, depois inicia o sistema -->
+  <script type="module" src="./JS/carregar_componentes.js"></script>
+
 </body>
 </html>
