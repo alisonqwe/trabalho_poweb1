@@ -10,7 +10,7 @@ import { mostrarSugestoes, renderizarCatalogo } from "./interface.js";
 let catalogo = carregarCatalogo();
 let filmeSelecionado = null;
 
-// Elementos do formulário
+// Elementos do formulário mapeia
 const formMidia = document.getElementById("formMidia");
 const inputTitulo = document.getElementById("titulo");
 const inputTipo = document.getElementById("tipo");

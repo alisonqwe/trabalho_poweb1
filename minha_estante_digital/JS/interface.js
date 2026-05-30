@@ -83,4 +83,4 @@ export function renderizarCatalogo(midias, listaMidias) {
 
     listaMidias.appendChild(card);
   });
-}
+}                                                      

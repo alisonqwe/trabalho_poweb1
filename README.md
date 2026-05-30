@@ -256,3 +256,5 @@ O Bootstrap foi usado como framework CSS para facilitar a construção da interf
 No projeto, usamos o sistema de grid do Bootstrap, que divide a tela em 12 colunas. Por exemplo, no formulário usamos col-md-6, col-md-3 e col-md-3, somando 12 colunas. Isso organiza os campos na mesma linha.
 
 Também usamos classes como container, row, card, btn, form-control e form-select. Assim, o Bootstrap cuida da base visual e da organização, enquanto o nosso CSS próprio personaliza cores, sombras e bordas.
+
+A pasta dependencias guarda bibliotecas externas utilizadas pelo sistema. Neste projeto, ela armazena o Bootstrap localmente, responsável pelo layout, formulários, botões, cards e responsividade.
