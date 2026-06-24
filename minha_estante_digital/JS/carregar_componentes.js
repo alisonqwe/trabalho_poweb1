@@ -1,3 +1,5 @@
+import { inicializarLogin } from "./login.js";
+
 async function carregarComponente(idElemento, caminhoArquivo) {
   const elemento = document.getElementById(idElemento);
 
@@ -22,11 +24,23 @@ async function carregarComponente(idElemento, caminhoArquivo) {
 }
 
 async function carregarTodosComponentes() {
+
+
+  const logado = sessionStorage.getItem("logado");
+
+  if (logado !== "true") {
+
+    await carregarComponente("login","componentes/login.html");
+     inicializarLogin();
+    return;
+  }
+
   await carregarComponente("areaHeader", "componentes/header.html");
   await carregarComponente("areaFormulario", "componentes/formulario.html");
   await carregarComponente("areaFiltros", "componentes/filtros.html");
   await carregarComponente("areaEstatisticas", "componentes/estatisticas.html");
   await carregarComponente("areaCatalogo", "componentes/catalogo.html");
+
 
   // Depois que todos os componentes foram carregados,
   // o JavaScript principal da aplicação é iniciado.

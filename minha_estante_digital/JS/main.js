@@ -1,12 +1,37 @@
 // 
-console.log("main.js carregou");
+// console.log("main.js carregou");
 import { carregarCatalogo, salvarCatalogo } from "./storage.js";
 import { buscarSugestoesTMDB, buscarDadosPorIdTMDB } from "./apiTMDB.js";
 import { criarMidia, excluirMidia as removerMidia, editarMidia as alterarMidia } from "./catalogo.js";
 import { filtrarMidias } from "./filtros.js";
 import { atualizarEstatisticas } from "./estatisticas.js";
 import { mostrarSugestoes, renderizarCatalogo } from "./interface.js";
+import { salvarCookie, lerCookie } from "./cookies.js";
+import { inicializarLogin } from "./login.js";
 
+inicializarLogin();
+
+const logado =sessionStorage.getItem("logado");
+
+if (logado === "true") {
+
+  const usuario =
+    localStorage.getItem("usuario");
+
+  console.log(`Usuário ${usuario} autenticado`);
+
+}
+
+salvarCookie(
+    "ultima_visita",
+    new Date().toLocaleString(),
+    7
+);
+const ultimaPesquisa = lerCookie("ultimaPesquisa");
+const tipoPreferido = lerCookie("tipoPreferido");
+
+console.log("Última pesquisa:", ultimaPesquisa);
+console.log("Tipo preferido:", tipoPreferido);
 let catalogo = carregarCatalogo();
 let filmeSelecionado = null;
 
@@ -92,6 +117,9 @@ inputTitulo.addEventListener("input", async function () {
     return;
   }
 
+
+  salvarCookie("ultimaPesquisa", titulo, 30);
+  salvarCookie("tipoPreferido", tipo, 30);
   const resultados = await buscarSugestoesTMDB(titulo, tipo);
 
   mostrarSugestoes(
@@ -133,3 +161,19 @@ window.editarMidia = function (id) {
 
 // Carrega os dados quando a página abre
 atualizarTela();
+
+
+
+const btnLogout =document.getElementById("btnLogout");
+console.log("Botão logout:", btnLogout);
+if (btnLogout) {
+
+  btnLogout.addEventListener("click", () => {
+
+    sessionStorage.removeItem("logado");
+
+    location.reload();
+
+  });
+
+}

@@ -1,7 +1,6 @@
-
 /* estilo geral na página inteira. */
 body {
-   background: linear-gradient(180deg, #6856aa, #e5e1f0);
+  background: linear-gradient(180deg, #6856aa, #e5e1f0);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -9,6 +8,7 @@ body {
   background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: white;
   padding: 50px 20px;
+  position: relative;
 }
 
 .cabecalho h1 {
@@ -29,6 +29,7 @@ body {
 .card-midia {
   height: 100%;
 }
+
 /* ajusta o tamanho do badge de status. O badge é aquela etiqueta visual que mostra se a mídia está como “Quero ver”, “Assistindo” ou “Já assisti”. */
 .badge-status {
   font-size: 0.9rem;
@@ -42,6 +43,7 @@ main {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 /* Aqui eu estilizo as seções principais da página, como o formulário e os filtros. Elas também usam a classe card, mas recebem um fundo em degradê, bordas arredondadas e sombra. */
 section.card {
   background: linear-gradient(180deg, #6856aa, #e5e1f0);
@@ -49,4 +51,33 @@ section.card {
   border-radius: 18px;
   margin-bottom: 25px;
   box-shadow: 0 4px 12px rgba(12, 12, 12, 0.12);
+}
+
+.login-container {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f5f5f5;
+}
+
+.login-box {
+  width: 320px;
+
+  padding: 25px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+#btnLogout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
