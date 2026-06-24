@@ -7,11 +7,11 @@ import { filtrarMidias } from "./filtros.js";
 import { atualizarEstatisticas } from "./estatisticas.js";
 import { mostrarSugestoes, renderizarCatalogo } from "./interface.js";
 import { salvarCookie, lerCookie } from "./cookies.js";
-import { inicializarLogin } from "./login.js";
+import { inicializarLogin, fazerLogout } from "./login.js";
 
 inicializarLogin();
 
-const logado =sessionStorage.getItem("logado");
+const logado = sessionStorage.getItem("logado");
 
 if (logado === "true") {
 
@@ -23,9 +23,9 @@ if (logado === "true") {
 }
 
 salvarCookie(
-    "ultima_visita",
-    new Date().toLocaleString(),
-    7
+  "ultima_visita",
+  new Date().toLocaleString(),
+  7
 );
 const ultimaPesquisa = lerCookie("ultimaPesquisa");
 const tipoPreferido = lerCookie("tipoPreferido");
@@ -164,15 +164,12 @@ atualizarTela();
 
 
 
-const btnLogout =document.getElementById("btnLogout");
+const btnLogout = document.getElementById("btnLogout");
 console.log("Botão logout:", btnLogout);
 if (btnLogout) {
 
   btnLogout.addEventListener("click", () => {
-
-    sessionStorage.removeItem("logado");
-
-    location.reload();
+    fazerLogout();
 
   });
 

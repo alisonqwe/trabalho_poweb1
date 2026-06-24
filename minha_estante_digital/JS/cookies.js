@@ -27,3 +27,7 @@ export function lerCookie(nome) {
 
     return "";
 }
+
+export function deletarCookie(nome) {
+    document.cookie =`${nome}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
+}
